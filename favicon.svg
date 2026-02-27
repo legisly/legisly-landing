@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="7" fill="#0B1120"/>
+  <rect width="32" height="32" rx="7" fill="#1B365D"/>
   <!-- Lowercase 'l' as a geometric shape -->
-  <rect x="10" y="5" width="5.5" height="22" rx="0" fill="#F1F5F9"/>
-  <rect x="10" y="22" width="13" height="5" rx="0" fill="#F1F5F9"/>
-  <!-- Teal accent dot (circle) -->
-  <circle cx="26.25" cy="8.25" r="3.2" fill="#14B8A6"/>
+  <rect x="9" y="5" width="6" height="22" rx="0" fill="#FAF3E3"/>
+  <rect x="9" y="22" width="13" height="5" rx="0" fill="#FAF3E3"/>
+  <!-- Yellow vintage period -->
+  <circle cx="25.5" cy="24.5" r="3" fill="#F2C744"/>
 </svg>

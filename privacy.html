@@ -12,21 +12,28 @@
     <meta name="twitter:image" content="https://legisly.ai/og-image.svg">
     <title>Privacy Policy — Legisly</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Bebas+Neue&family=Barlow+Condensed:wght@600;700;800&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="retro.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
-        <a href="index.html" class="logo">leg<span class="dot">i</span>sly<span class="dot">.</span></a>
-        <div class="nav-links">
+        <a href="index.html" class="logo">legisly<span class="dot">.</span></a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="navLinks">
             <a href="features.html">Features</a>
-            <a href="how-it-works.html">How It Works</a>
             <a href="pricing.html">Pricing</a>
-            <a href="index.html#cta" class="btn-primary">Get Early Access</a>
+            <a href="about.html">About</a>
+            <a href="#" class="btn-retro" onclick="openModal(); return false;">Get Early Access</a>
         </div>
     </nav>
 
     <div class="content-page">
-        <h1>Privacy Policy</h1>
+        <h1>PRIVACY POLICY</h1>
         <p class="last-updated">Last updated: February 12, 2025</p>
 
         <p>Legisly Labs, Inc. ("Legisly," "we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website and services.</p>
@@ -86,11 +93,12 @@
         <p>Legisly Labs, Inc.<br>California, USA</p>
     </div>
 
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
-                <a href="index.html" class="logo">leg<span class="dot">i</span>sly<span class="dot">.</span></a>
-                <p>AI-powered legislative tools that let any business compete — and win.</p>
+                <a href="index.html" class="logo">legisly<span class="dot">.</span></a>
+                <p>AI-powered legislative tools that let any business compete &mdash; and win.</p>
             </div>
             <div class="footer-column">
                 <h4>Product</h4>
@@ -120,11 +128,51 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2025 Legisly Labs, Inc. All rights reserved.</p>
+            <p>&copy; 2025 Legisly Labs, Inc. All rights reserved.</p>
             <div class="social-links">
                 <a href="https://x.com/LegislyAI" target="_blank" rel="noopener noreferrer">X</a>
             </div>
         </div>
     </footer>
+
+    <!-- Email Modal -->
+    <div class="modal-overlay" id="emailModal">
+        <div class="modal">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h2>GET EARLY ACCESS</h2>
+            <p>Join the waitlist and be the first to shape policy with AI.</p>
+            <form class="modal-form" action="https://formspree.io/f/mdalewlb" method="POST">
+                <input type="email" name="email" placeholder="you@company.com" required>
+                <input type="hidden" name="_subject" value="New Legisly Waitlist Signup!">
+                <button type="submit">JOIN THE WAITLIST</button>
+                <span class="waitlist-note">500+ businesses already on the list</span>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Modal
+        function openModal() {
+            document.getElementById('emailModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => document.querySelector('.modal-form input[type="email"]').focus(), 300);
+        }
+        function closeModal() {
+            document.getElementById('emailModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        document.getElementById('modalClose').addEventListener('click', closeModal);
+        document.getElementById('emailModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Hamburger menu
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('open');
+        });
+    </script>
 </body>
 </html>

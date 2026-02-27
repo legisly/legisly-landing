@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Your unfair advantage in policy. AI-powered legislative intelligence for every business.">
-    <meta property="og:title" content="Legisly — Your Unfair Advantage in Policy">
-    <meta property="og:description" content="AI-powered tools that track, analyze, and act on legislation — so you can shape the laws that shape your business.">
+    <meta name="description" content="Simple, transparent pricing for Legisly. AI-powered legislative intelligence for every business.">
+    <meta property="og:title" content="Pricing — Legisly">
+    <meta property="og:description" content="Simple, transparent pricing. AI-powered tools that track, analyze, and act on legislation.">
     <meta property="og:image" content="https://legisly.ai/og-image.svg">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://legisly.ai/og-image.svg">
     <title>Pricing — Legisly</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Bebas+Neue&family=Barlow+Condensed:wght@600;700;800&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="retro.css">
     <style>
         .pricing-grid {
             display: grid;
@@ -21,59 +24,80 @@
             margin-top: 3rem;
         }
         .pricing-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
+            background: var(--cream-dark);
+            border: 4px solid var(--blue-retro);
             padding: 2.5rem;
             display: flex;
             flex-direction: column;
+            position: relative;
+        }
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            right: -8px;
+            bottom: -8px;
+            background: var(--blue-retro);
+            z-index: -1;
+            transition: all 0.2s;
+        }
+        .pricing-card:hover::before {
+            top: 12px;
+            left: 12px;
         }
         .pricing-card.featured {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
-            border-color: var(--accent);
+            border-color: var(--orange-warm);
             position: relative;
         }
         .pricing-card.featured::before {
-            content: 'MOST POPULAR';
+            background: var(--orange-warm);
+        }
+        .featured-badge {
             position: absolute;
-            top: -12px;
+            top: -16px;
             left: 50%;
             transform: translateX(-50%);
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
-            padding: 0.4rem 1rem;
-            border-radius: 100px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
+            background: var(--red-accent);
+            color: var(--cream);
+            padding: 0.4rem 1.5rem;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            border: 3px solid var(--brown-shadow);
+            white-space: nowrap;
         }
         .plan-name {
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.15em;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            color: var(--text-secondary);
+            color: var(--blue-dark);
+            opacity: 0.6;
             margin-bottom: 1rem;
         }
         .price {
-            font-family: 'Clash Display', sans-serif;
+            font-family: 'Bebas Neue', sans-serif;
             font-size: 3.5rem;
-            font-weight: 700;
+            color: var(--orange-warm);
             margin-bottom: 0.5rem;
+            line-height: 1;
         }
-        .pricing-card.featured .price {
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .featured .price {
+            color: var(--red-accent);
         }
         .price span {
             font-size: 1rem;
             font-weight: 400;
-            color: var(--text-secondary);
+            color: var(--blue-dark);
+            opacity: 0.6;
         }
         .plan-description {
-            color: var(--text-secondary);
+            color: var(--blue-dark);
             margin-bottom: 2rem;
             line-height: 1.6;
+            font-size: 0.95rem;
         }
         .plan-features {
             list-style: none;
@@ -85,74 +109,107 @@
             padding: 0.6rem 0;
             padding-left: 1.5rem;
             position: relative;
-            color: var(--text-secondary);
+            color: var(--blue-dark);
+            font-size: 0.95rem;
         }
         .plan-features li::before {
-            content: '✓';
+            content: '\2605';
             position: absolute;
             left: 0;
-            color: var(--accent-light);
+            color: var(--yellow-vintage);
         }
         .plan-cta {
             margin-top: auto;
         }
-        .plan-cta .btn-primary, .plan-cta .btn-secondary {
+        .plan-cta .btn-retro,
+        .plan-cta .btn-secondary-retro {
             width: 100%;
             text-align: center;
         }
         .compare-section {
             margin-top: 5rem;
             padding-top: 5rem;
-            border-top: 1px solid var(--border-color);
+            border-top: 4px solid var(--cream-dark);
         }
         .compare-section h2 {
             text-align: center;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            color: var(--blue-retro);
+            letter-spacing: 3px;
             margin-bottom: 3rem;
         }
         .compare-table {
             width: 100%;
             border-collapse: collapse;
         }
-        .compare-table th, .compare-table td {
+        .compare-table th,
+        .compare-table td {
             padding: 1rem;
             text-align: left;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--cream-dark);
         }
         .compare-table th {
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-            font-weight: 600;
+            color: var(--blue-dark);
+            opacity: 0.6;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 2px;
         }
         .compare-table td:first-child {
-            color: var(--text-primary);
+            color: var(--blue-dark);
+            font-weight: 600;
         }
         .compare-table td {
-            color: var(--text-secondary);
+            color: var(--blue-dark);
+            font-size: 0.95rem;
         }
-        .check { color: var(--accent-light); }
+        .check {
+            color: var(--orange-warm);
+            font-weight: 700;
+        }
+
         @media (max-width: 900px) {
-            .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .compare-table {
+                font-size: 0.85rem;
+            }
+            .compare-table th,
+            .compare-table td {
+                padding: 0.75rem 0.5rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
-        <a href="index.html" class="logo">leg<span class="dot">i</span>sly<span class="dot">.</span></a>
-        <div class="nav-links">
+        <a href="index.html" class="logo">legisly<span class="dot">.</span></a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="navLinks">
             <a href="features.html">Features</a>
-            <a href="how-it-works.html">How It Works</a>
             <a href="pricing.html" class="active">Pricing</a>
-            <a href="index.html#cta" class="btn-primary">Get Early Access</a>
+            <a href="about.html">About</a>
+            <a href="#" class="btn-retro" onclick="openModal(); return false;">Get Early Access</a>
         </div>
     </nav>
 
+    <!-- Page Header -->
     <section class="page-header">
-        <h1>Simple, <span class="highlight">transparent pricing</span></h1>
+        <h1>SIMPLE, <span class="accent">TRANSPARENT PRICING</span></h1>
         <p>No hidden fees. No long-term contracts. Cancel anytime.</p>
     </section>
 
+    <!-- Pricing Cards -->
     <section class="section">
         <div class="pricing-grid">
             <div class="pricing-card">
@@ -169,11 +226,12 @@
                     <li>Email support</li>
                 </ul>
                 <div class="plan-cta">
-                    <a href="index.html#cta" class="btn-secondary">Join Waitlist</a>
+                    <a href="#" class="btn-secondary-retro" onclick="openModal(); return false;">Join Waitlist</a>
                 </div>
             </div>
 
             <div class="pricing-card featured">
+                <div class="featured-badge">MOST POPULAR</div>
                 <div class="plan-name">Professional</div>
                 <div class="price">$199<span>/month</span></div>
                 <p class="plan-description">For firms and associations that need comprehensive coverage.</p>
@@ -182,14 +240,14 @@
                     <li>Unlimited tracked bills</li>
                     <li>AI bill summaries</li>
                     <li>Daily reports + custom scheduling</li>
-                    <li>Email, SMS & push alerts</li>
-                    <li>Advanced letter & testimony generation</li>
+                    <li>Email, SMS &amp; push alerts</li>
+                    <li>Advanced letter &amp; testimony generation</li>
                     <li>Predictive passage scoring</li>
                     <li>Legislator profiles</li>
                     <li>Priority support</li>
                 </ul>
                 <div class="plan-cta">
-                    <a href="index.html#cta" class="btn-primary">Join Waitlist</a>
+                    <a href="#" class="btn-retro" onclick="openModal(); return false;">Join Waitlist</a>
                 </div>
             </div>
 
@@ -203,17 +261,18 @@
                     <li>Custom AI training</li>
                     <li>API access</li>
                     <li>White-label options</li>
-                    <li>SSO & advanced security</li>
+                    <li>SSO &amp; advanced security</li>
                     <li>Dedicated account manager</li>
                     <li>Custom integrations</li>
                     <li>SLA guarantee</li>
                 </ul>
                 <div class="plan-cta">
-                    <a href="contact.html" class="btn-secondary">Contact Sales</a>
+                    <a href="contact.html" class="btn-secondary-retro">Contact Sales</a>
                 </div>
             </div>
         </div>
 
+        <!-- Compare Plans Table -->
         <div class="compare-section">
             <h2>Compare Plans</h2>
             <table class="compare-table">
@@ -240,15 +299,15 @@
                     </tr>
                     <tr>
                         <td>AI summaries</td>
-                        <td class="check">✓</td>
-                        <td class="check">✓</td>
-                        <td class="check">✓</td>
+                        <td class="check">&check;</td>
+                        <td class="check">&check;</td>
+                        <td class="check">&check;</td>
                     </tr>
                     <tr>
                         <td>Predictive scoring</td>
-                        <td>—</td>
-                        <td class="check">✓</td>
-                        <td class="check">✓</td>
+                        <td>&mdash;</td>
+                        <td class="check">&check;</td>
+                        <td class="check">&check;</td>
                     </tr>
                     <tr>
                         <td>Letter generation</td>
@@ -258,15 +317,15 @@
                     </tr>
                     <tr>
                         <td>SMS alerts</td>
-                        <td>—</td>
-                        <td class="check">✓</td>
-                        <td class="check">✓</td>
+                        <td>&mdash;</td>
+                        <td class="check">&check;</td>
+                        <td class="check">&check;</td>
                     </tr>
                     <tr>
                         <td>API access</td>
-                        <td>—</td>
-                        <td>—</td>
-                        <td class="check">✓</td>
+                        <td>&mdash;</td>
+                        <td>&mdash;</td>
+                        <td class="check">&check;</td>
                     </tr>
                     <tr>
                         <td>Support</td>
@@ -279,22 +338,24 @@
         </div>
     </section>
 
+    <!-- CTA Section -->
     <section class="cta-section" id="cta">
-        <h2>Ready to get started?</h2>
+        <h2>READY TO GET STARTED?</h2>
         <p>Join the waitlist. Launching Summer 2025.</p>
         <form class="email-form" action="https://formspree.io/f/mdalewlb" method="POST">
             <input type="email" name="email" placeholder="Enter your email" required>
             <input type="hidden" name="_subject" value="New Legisly Waitlist Signup!">
             <input type="hidden" name="_next" value="https://legisly.ai/thank-you.html">
-            <button type="submit" class="btn-primary">Join Waitlist</button>
+            <button type="submit">JOIN WAITLIST</button>
         </form>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
-                <a href="index.html" class="logo">leg<span class="dot">i</span>sly<span class="dot">.</span></a>
-                <p>AI-powered legislative tools that let any business compete — and win.</p>
+                <a href="index.html" class="logo">legisly<span class="dot">.</span></a>
+                <p>AI-powered legislative tools that let any business compete &mdash; and win.</p>
             </div>
             <div class="footer-column">
                 <h4>Product</h4>
@@ -324,11 +385,51 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2025 Legisly Labs, Inc. All rights reserved.</p>
+            <p>&copy; 2025 Legisly Labs, Inc. All rights reserved.</p>
             <div class="social-links">
                 <a href="https://x.com/LegislyAI" target="_blank" rel="noopener noreferrer">X</a>
             </div>
         </div>
     </footer>
+
+    <!-- Email Modal -->
+    <div class="modal-overlay" id="emailModal">
+        <div class="modal">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h2>GET EARLY ACCESS</h2>
+            <p>Join the waitlist and be the first to shape policy with AI.</p>
+            <form class="modal-form" action="https://formspree.io/f/mdalewlb" method="POST">
+                <input type="email" name="email" placeholder="you@company.com" required>
+                <input type="hidden" name="_subject" value="New Legisly Waitlist Signup!">
+                <button type="submit">JOIN THE WAITLIST</button>
+                <span class="waitlist-note">500+ businesses already on the list</span>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Modal
+        function openModal() {
+            document.getElementById('emailModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => document.querySelector('.modal-form input[type="email"]').focus(), 300);
+        }
+        function closeModal() {
+            document.getElementById('emailModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        document.getElementById('modalClose').addEventListener('click', closeModal);
+        document.getElementById('emailModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Hamburger menu
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('open');
+        });
+    </script>
 </body>
 </html>

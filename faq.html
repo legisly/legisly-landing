@@ -12,32 +12,41 @@
     <meta name="twitter:image" content="https://legisly.ai/og-image.svg">
     <title>FAQ — Legisly</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Bebas+Neue&family=Barlow+Condensed:wght@600;700;800&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="retro.css">
     <style>
         .faq-list {
             max-width: 800px;
-            margin: 3rem auto 0;
+            margin: 0 auto;
         }
         .faq-item {
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 4px solid var(--cream-dark);
             padding: 2rem 0;
         }
         .faq-item:first-child {
-            border-top: 1px solid var(--border-color);
+            border-top: 4px solid var(--cream-dark);
         }
         .faq-question {
-            font-family: 'Clash Display', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            color: var(--blue-retro);
+            letter-spacing: 2px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 1rem;
+        }
+        .faq-question .toggle-arrow {
+            font-size: 1.2rem;
+            transition: transform 0.3s;
         }
         .faq-answer {
-            color: var(--text-secondary);
+            color: var(--blue-dark);
             line-height: 1.8;
+            font-size: 1.05rem;
         }
         .faq-answer p {
             margin-bottom: 1rem;
@@ -45,57 +54,67 @@
         .faq-answer p:last-child {
             margin-bottom: 0;
         }
+        .faq-answer a {
+            color: var(--orange-warm);
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
-        <a href="index.html" class="logo">leg<span class="dot">i</span>sly<span class="dot">.</span></a>
-        <div class="nav-links">
+        <a href="index.html" class="logo">legisly<span class="dot">.</span></a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="navLinks">
             <a href="features.html">Features</a>
-            <a href="how-it-works.html">How It Works</a>
             <a href="pricing.html">Pricing</a>
-            <a href="index.html#cta" class="btn-primary">Get Early Access</a>
+            <a href="about.html">About</a>
+            <a href="#" class="btn-retro" onclick="openModal(); return false;">Get Early Access</a>
         </div>
     </nav>
 
+    <!-- Page Header -->
     <section class="page-header">
-        <h1>Frequently Asked <span class="highlight">Questions</span></h1>
+        <h1>FREQUENTLY ASKED <span class="accent">QUESTIONS</span></h1>
         <p>Everything you need to know about Legisly.</p>
     </section>
 
+    <!-- FAQ Section -->
     <section class="section">
         <div class="faq-list">
             <div class="faq-item">
-                <div class="faq-question">What is Legisly?</div>
+                <div class="faq-question">What is Legisly? <span class="toggle-arrow">&#9660;</span></div>
                 <div class="faq-answer">
                     <p>Legisly is an AI-powered legislative intelligence platform that helps businesses, associations, and advocacy organizations track legislation, generate reports, and take action on bills that affect them.</p>
-                    <p>Think of it as having a legislative analyst working for you 24/7 — monitoring thousands of bills, alerting you to changes, and helping you respond professionally.</p>
+                    <p>Think of it as having a legislative analyst working for you 24/7 &mdash; monitoring thousands of bills, alerting you to changes, and helping you respond professionally.</p>
                 </div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question">Who is Legisly for?</div>
+                <div class="faq-question">Who is Legisly for? <span class="toggle-arrow">&#9660;</span></div>
                 <div class="faq-answer">
                     <p>Legisly is built for anyone who needs to track and influence legislation:</p>
-                    <p>• Small and medium businesses affected by state regulations<br>
-                    • Trade associations representing industry interests<br>
-                    • Lobbying and government affairs firms<br>
-                    • Nonprofits and advocacy organizations<br>
-                    • Corporate government relations teams<br>
-                    • Law firms tracking regulatory changes</p>
+                    <p>&bull; Small and medium businesses affected by state regulations<br>
+                    &bull; Trade associations representing industry interests<br>
+                    &bull; Lobbying and government affairs firms<br>
+                    &bull; Nonprofits and advocacy organizations<br>
+                    &bull; Corporate government relations teams<br>
+                    &bull; Law firms tracking regulatory changes</p>
                 </div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question">What states do you cover?</div>
+                <div class="faq-question">What states do you cover? <span class="toggle-arrow">&#9660;</span></div>
                 <div class="faq-answer">
                     <p>We're launching with California in Summer 2025, with Texas, New York, and Florida following shortly after. Our goal is full 50-state coverage plus federal legislation by 2026.</p>
-                    <p>If you need a specific state, join the waitlist and let us know — we prioritize based on demand.</p>
+                    <p>If you need a specific state, join the waitlist and let us know &mdash; we prioritize based on demand.</p>
                 </div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question">How does AI bill tracking work?</div>
+                <div class="faq-question">How does AI bill tracking work? <span class="toggle-arrow">&#9660;</span></div>
                 <div class="faq-answer">
                     <p>When you sign up, you tell us about your business in plain English. Our AI analyzes your description to understand your industry, concerns, and priorities.</p>
                     <p>Then it continuously monitors all bills in your covered states, automatically flagging the ones that could affect you. You get alerts when bills change status, approach deadlines, or require action.</p>
@@ -103,7 +122,7 @@
             </div>
 
             <div class="faq-item">
-                <div class="faq-question">How accurate is the predictive scoring?</div>
+                <div class="faq-question">How accurate is the predictive scoring? <span class="toggle-arrow">&#9660;</span></div>
                 <div class="faq-answer">
                     <p>Our AI predicts bill passage likelihood based on historical patterns, sponsor influence, committee dynamics, and political factors. In testing, our models achieve 75-85% accuracy on whether a bill will pass or fail.</p>
                     <p>Predictions improve as bills progress through the legislative process and more data becomes available.</p>
@@ -111,15 +130,15 @@
             </div>
 
             <div class="faq-item">
-                <div class="faq-question">Can I generate letters and testimony?</div>
+                <div class="faq-question">Can I generate letters and testimony? <span class="toggle-arrow">&#9660;</span></div>
                 <div class="faq-answer">
-                    <p>Yes! Legisly can generate professional support letters, opposition letters, committee testimony, and even amendment language — all customized to your position and concerns.</p>
+                    <p>Yes! Legisly can generate professional support letters, opposition letters, committee testimony, and even amendment language &mdash; all customized to your position and concerns.</p>
                     <p>You review and edit before sending. The AI drafts, you control the final message.</p>
                 </div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question">Is my data secure?</div>
+                <div class="faq-question">Is my data secure? <span class="toggle-arrow">&#9660;</span></div>
                 <div class="faq-answer">
                     <p>Absolutely. We use bank-level encryption for all data in transit and at rest. Your legislative positions and business information are never shared with other users or third parties.</p>
                     <p>See our <a href="security.html">Security page</a> for more details on our practices.</p>
@@ -127,21 +146,21 @@
             </div>
 
             <div class="faq-item">
-                <div class="faq-question">Can I cancel anytime?</div>
+                <div class="faq-question">Can I cancel anytime? <span class="toggle-arrow">&#9660;</span></div>
                 <div class="faq-answer">
                     <p>Yes. All plans are month-to-month with no long-term contracts. You can cancel anytime from your account settings, and you'll retain access until the end of your billing period.</p>
                 </div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question">When is Legisly launching?</div>
+                <div class="faq-question">When is Legisly launching? <span class="toggle-arrow">&#9660;</span></div>
                 <div class="faq-answer">
                     <p>We're launching in Summer 2025, starting with California. Join the waitlist to be among the first to get access and receive updates on our progress.</p>
                 </div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question">How do I get in touch?</div>
+                <div class="faq-question">How do I get in touch? <span class="toggle-arrow">&#9660;</span></div>
                 <div class="faq-answer">
                     <p>Email us at <a href="mailto:contact@legisly.ai">contact@legisly.ai</a> or visit our <a href="contact.html">Contact page</a>. We respond to all inquiries within 24 hours.</p>
                 </div>
@@ -149,17 +168,19 @@
         </div>
     </section>
 
+    <!-- CTA Section -->
     <section class="cta-section" id="cta">
-        <h2>Still have questions?</h2>
+        <h2>STILL HAVE QUESTIONS?</h2>
         <p>Get in touch. We're happy to help.</p>
-        <a href="contact.html" class="btn-primary">Contact Us</a>
+        <a href="contact.html" class="btn-retro">Contact Us</a>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
-                <a href="index.html" class="logo">leg<span class="dot">i</span>sly<span class="dot">.</span></a>
-                <p>AI-powered legislative tools that let any business compete — and win.</p>
+                <a href="index.html" class="logo">legisly<span class="dot">.</span></a>
+                <p>AI-powered legislative tools that let any business compete &mdash; and win. The playing field, leveled.</p>
             </div>
             <div class="footer-column">
                 <h4>Product</h4>
@@ -189,11 +210,51 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2025 Legisly Labs, Inc. All rights reserved.</p>
+            <p>&copy; 2025 Legisly Labs, Inc. All rights reserved.</p>
             <div class="social-links">
                 <a href="https://x.com/LegislyAI" target="_blank" rel="noopener noreferrer">X</a>
             </div>
         </div>
     </footer>
+
+    <!-- Email Modal -->
+    <div class="modal-overlay" id="emailModal">
+        <div class="modal">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h2>GET EARLY ACCESS</h2>
+            <p>Join the waitlist and be the first to shape policy with AI.</p>
+            <form class="modal-form" action="https://formspree.io/f/mdalewlb" method="POST">
+                <input type="email" name="email" placeholder="you@company.com" required>
+                <input type="hidden" name="_subject" value="New Legisly Waitlist Signup!">
+                <button type="submit">JOIN THE WAITLIST</button>
+                <span class="waitlist-note">500+ businesses already on the list</span>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Modal
+        function openModal() {
+            document.getElementById('emailModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => document.querySelector('.modal-form input[type="email"]').focus(), 300);
+        }
+        function closeModal() {
+            document.getElementById('emailModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        document.getElementById('modalClose').addEventListener('click', closeModal);
+        document.getElementById('emailModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Hamburger menu
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('open');
+        });
+    </script>
 </body>
 </html>

@@ -12,89 +12,126 @@
     <meta name="twitter:image" content="https://legisly.ai/og-image.svg">
     <title>Blog — Legisly</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Bebas+Neue&family=Barlow+Condensed:wght@600;700;800&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="retro.css">
     <style>
+        .coming-soon-box {
+            background: var(--cream-dark);
+            border: 4px solid var(--blue-retro);
+            padding: 4rem;
+            text-align: center;
+            margin-top: 2rem;
+            position: relative;
+        }
+        .coming-soon-box::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            right: -8px;
+            bottom: -8px;
+            background: var(--blue-retro);
+            z-index: -1;
+        }
+        .coming-soon-box h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: var(--blue-retro);
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+        .coming-soon-box p {
+            color: var(--blue-dark);
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+        .coming-soon-box .email-form {
+            max-width: 400px;
+        }
         .blog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 4rem;
+            opacity: 0.5;
         }
         .blog-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
+            background: var(--cream-dark);
+            border: 4px solid var(--blue-retro);
             overflow: hidden;
-            transition: all 0.3s ease;
+            position: relative;
+            transition: all 0.2s ease;
         }
-        .blog-card:hover {
-            border-color: #3a3a3a;
-            transform: translateY(-4px);
+        .blog-card::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            right: -8px;
+            bottom: -8px;
+            background: var(--blue-retro);
+            z-index: -1;
+            transition: all 0.2s ease;
         }
         .blog-image {
-            height: 200px;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            height: 160px;
+            background: var(--blue-retro);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 3rem;
         }
         .blog-content {
-            padding: 2rem;
+            padding: 1.5rem;
         }
         .blog-meta {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 0.85rem;
+            color: var(--orange-warm);
+            letter-spacing: 1px;
             margin-bottom: 0.75rem;
         }
         .blog-card h3 {
-            font-family: 'Clash Display', sans-serif;
-            font-size: 1.25rem;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.3rem;
+            color: var(--blue-retro);
+            letter-spacing: 1px;
             margin-bottom: 0.75rem;
         }
         .blog-card h3 a {
-            color: var(--text-primary);
+            color: var(--blue-retro);
             text-decoration: none;
         }
         .blog-card h3 a:hover {
-            color: var(--accent-light);
+            color: var(--orange-warm);
         }
         .blog-excerpt {
-            color: var(--text-secondary);
+            color: var(--blue-dark);
             line-height: 1.6;
-        }
-        .coming-soon-box {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 4rem;
-            text-align: center;
-            margin-top: 2rem;
-        }
-        .coming-soon-box h3 {
-            font-family: 'Clash Display', sans-serif;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        .coming-soon-box p {
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
+            font-size: 0.95rem;
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
-        <a href="index.html" class="logo">leg<span class="dot">i</span>sly<span class="dot">.</span></a>
-        <div class="nav-links">
+        <a href="index.html" class="logo">legisly<span class="dot">.</span></a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="navLinks">
             <a href="features.html">Features</a>
-            <a href="how-it-works.html">How It Works</a>
             <a href="pricing.html">Pricing</a>
-            <a href="index.html#cta" class="btn-primary">Get Early Access</a>
+            <a href="about.html">About</a>
+            <a href="#" class="btn-retro" onclick="openModal(); return false;">Get Early Access</a>
         </div>
     </nav>
 
     <section class="page-header">
-        <h1>The Legisly <span class="highlight">Blog</span></h1>
+        <h1>THE LEGISLY <span class="accent">BLOG</span></h1>
         <p>Insights on legislation, advocacy, and the future of civic technology.</p>
     </section>
 
@@ -102,19 +139,19 @@
         <div class="coming-soon-box">
             <h3>Coming Soon</h3>
             <p>We're working on our first posts. Subscribe to be notified when we publish.</p>
-            <form class="email-form" action="https://formspree.io/f/mdalewlb" method="POST" style="max-width: 400px;">
+            <form class="email-form" action="https://formspree.io/f/mdalewlb" method="POST">
                 <input type="email" name="email" placeholder="Enter your email" required>
                 <input type="hidden" name="_subject" value="Blog Subscription - Legisly">
                 <input type="hidden" name="_next" value="https://legisly.ai/thank-you.html">
-                <button type="submit" class="btn-primary">Subscribe</button>
+                <button type="submit">Subscribe</button>
             </form>
         </div>
 
-        <div class="blog-grid" style="margin-top: 4rem; opacity: 0.5;">
+        <div class="blog-grid">
             <div class="blog-card">
                 <div class="blog-image">📊</div>
                 <div class="blog-content">
-                    <div class="blog-meta">Coming Soon • 5 min read</div>
+                    <div class="blog-meta">Coming Soon &bull; 5 min read</div>
                     <h3><a href="#">How AI is Changing Legislative Tracking</a></h3>
                     <p class="blog-excerpt">The traditional model of legislative tracking is broken. Here's how AI is fixing it.</p>
                 </div>
@@ -123,7 +160,7 @@
             <div class="blog-card">
                 <div class="blog-image">⚖️</div>
                 <div class="blog-content">
-                    <div class="blog-meta">Coming Soon • 7 min read</div>
+                    <div class="blog-meta">Coming Soon &bull; 7 min read</div>
                     <h3><a href="#">The Small Business Guide to State Legislation</a></h3>
                     <p class="blog-excerpt">Everything you need to know about tracking and influencing bills in your state.</p>
                 </div>
@@ -132,7 +169,7 @@
             <div class="blog-card">
                 <div class="blog-image">🎯</div>
                 <div class="blog-content">
-                    <div class="blog-meta">Coming Soon • 4 min read</div>
+                    <div class="blog-meta">Coming Soon &bull; 4 min read</div>
                     <h3><a href="#">Predicting Bill Passage: The Science Behind Our Scores</a></h3>
                     <p class="blog-excerpt">A deep dive into how we use machine learning to predict legislative outcomes.</p>
                 </div>
@@ -140,11 +177,12 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
-                <a href="index.html" class="logo">leg<span class="dot">i</span>sly<span class="dot">.</span></a>
-                <p>AI-powered legislative tools that let any business compete — and win.</p>
+                <a href="index.html" class="logo">legisly<span class="dot">.</span></a>
+                <p>AI-powered legislative tools that let any business compete &mdash; and win.</p>
             </div>
             <div class="footer-column">
                 <h4>Product</h4>
@@ -174,11 +212,51 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2025 Legisly Labs, Inc. All rights reserved.</p>
+            <p>&copy; 2025 Legisly Labs, Inc. All rights reserved.</p>
             <div class="social-links">
                 <a href="https://x.com/LegislyAI" target="_blank" rel="noopener noreferrer">X</a>
             </div>
         </div>
     </footer>
+
+    <!-- Email Modal -->
+    <div class="modal-overlay" id="emailModal">
+        <div class="modal">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h2>GET EARLY ACCESS</h2>
+            <p>Join the waitlist and be the first to shape policy with AI.</p>
+            <form class="modal-form" action="https://formspree.io/f/mdalewlb" method="POST">
+                <input type="email" name="email" placeholder="you@company.com" required>
+                <input type="hidden" name="_subject" value="New Legisly Waitlist Signup!">
+                <button type="submit">JOIN THE WAITLIST</button>
+                <span class="waitlist-note">500+ businesses already on the list</span>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Modal
+        function openModal() {
+            document.getElementById('emailModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => document.querySelector('.modal-form input[type="email"]').focus(), 300);
+        }
+        function closeModal() {
+            document.getElementById('emailModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        document.getElementById('modalClose').addEventListener('click', closeModal);
+        document.getElementById('emailModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Hamburger menu
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('open');
+        });
+    </script>
 </body>
 </html>
