@@ -12,7 +12,10 @@
     <meta name="twitter:image" content="https://legisly.ai/og-image.svg">
     <title>How It Works — Legisly</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Bebas+Neue&family=Barlow+Condensed:wght@600;700;800&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="retro.css">
     <style>
         .steps-container {
             position: relative;
@@ -21,12 +24,12 @@
         .steps-container::before {
             content: '';
             position: absolute;
-            left: 39px;
+            left: 47px;
             top: 0;
             bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end));
-            opacity: 0.3;
+            width: 4px;
+            background: var(--yellow-vintage);
+            opacity: 0.4;
         }
         .step {
             display: flex;
@@ -36,59 +39,61 @@
         .step-number {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
-            border-radius: 16px;
+            background: var(--orange-warm);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Clash Display', sans-serif;
-            font-weight: 700;
+            font-family: 'Bebas Neue', sans-serif;
             font-size: 1.75rem;
+            color: var(--cream);
+            border: 3px solid var(--brown-shadow);
+            box-shadow: 4px 4px 0 var(--brown-shadow);
             flex-shrink: 0;
             position: relative;
             z-index: 1;
         }
         .step-content h3 {
-            font-family: 'Clash Display', sans-serif;
+            font-family: 'Bebas Neue', sans-serif;
             font-size: 1.5rem;
-            font-weight: 700;
             text-transform: uppercase;
+            color: var(--blue-retro);
+            letter-spacing: 2px;
             margin-bottom: 0.75rem;
         }
         .step-content p {
-            color: var(--text-secondary);
+            color: var(--blue-dark);
             font-size: 1.1rem;
             line-height: 1.7;
             margin-bottom: 1.25rem;
         }
         .step-detail {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
+            background: var(--cream-dark);
+            border: 4px solid var(--blue-retro);
             padding: 1.5rem;
         }
         .step-detail h4 {
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            color: var(--accent-light);
+            color: var(--orange-warm);
             margin-bottom: 0.5rem;
         }
         .step-detail p {
-            color: var(--text-secondary);
+            color: var(--blue-dark);
             font-size: 0.95rem;
             margin-bottom: 0;
         }
         .time-badge {
             display: inline-block;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            padding: 0.4rem 0.75rem;
-            border-radius: 100px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: var(--accent-light);
+            background: var(--yellow-vintage);
+            color: var(--blue-dark);
+            padding: 0.35rem 0.75rem;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            border: 2px solid var(--brown-shadow);
             margin-bottom: 0.75rem;
         }
         @media (max-width: 768px) {
@@ -99,27 +104,36 @@
     </style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
-        <a href="index.html" class="logo">leg<span class="dot">i</span>sly<span class="dot">.</span></a>
-        <div class="nav-links">
+        <a href="index.html" class="logo-lockup">
+                    <svg class="logo-seal" viewBox="0 0 200 200" width="44" height="44" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="96" stroke="#F2C744" stroke-width="4"/><circle cx="100" cy="100" r="88" stroke="#F2C744" stroke-width="1" stroke-dasharray="2 4"/><circle cx="100" cy="100" r="82" stroke="#F2C744" stroke-width="2"/><g transform="translate(40,30)"><path d="M60 20C30 20 18 50 18 63L102 63C102 50 90 20 60 20Z" stroke="#F2C744" stroke-width="2.5"/><rect x="52" y="9" width="16" height="15" stroke="#F2C744" stroke-width="2"/><circle cx="60" cy="9" r="3" fill="#F2C744"/><circle cx="42" cy="45" r="4" fill="#F2C744"/><circle cx="60" cy="41" r="4" fill="#F2C744"/><circle cx="78" cy="45" r="4" fill="#F2C744"/><rect x="24" y="63" width="7" height="24" fill="#F2C744"/><rect x="40" y="63" width="7" height="24" fill="#F2C744"/><rect x="56" y="63" width="8" height="24" fill="#F2C744"/><rect x="73" y="63" width="7" height="24" fill="#F2C744"/><rect x="89" y="63" width="7" height="24" fill="#F2C744"/><rect x="16" y="87" width="88" height="6" fill="#F2C744"/></g><g fill="#F2C744"><polygon points="28,100 30,105 35,105 31,108 32.5,113 28,110 23.5,113 25,108 21,105 26,105"/><polygon points="172,100 174,105 179,105 175,108 176.5,113 172,110 167.5,113 169,108 165,105 170,105"/></g><text x="100" y="158" text-anchor="middle" fill="#F2C744" font-family="Righteous,cursive" font-size="11" letter-spacing="2">&#x2605; EST 2025 &#x2605;</text></svg>
+                    <span class="logo-text">legisly</span>
+                </a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="navLinks">
             <a href="features.html">Features</a>
             <a href="how-it-works.html" class="active">How It Works</a>
             <a href="pricing.html">Pricing</a>
-            <a href="index.html#cta" class="btn-primary">Get Early Access</a>
+            <a href="#" class="btn-retro" onclick="openModal(); return false;">Get Early Access</a>
         </div>
     </nav>
 
+    <!-- Page Header -->
     <section class="page-header">
-        <h1>From signup to <span class="highlight">action in 5 minutes</span></h1>
+        <h1>FROM SIGNUP TO <span class="accent">ACTION IN 5 MINUTES</span></h1>
         <p>No expertise required. No complex setup. Just tell us about your business and let AI do the rest.</p>
     </section>
 
+    <!-- Steps Section -->
     <section class="section">
         <div class="steps-container">
             <div class="step">
                 <div class="step-number">01</div>
                 <div class="step-content">
-                    <span class="time-badge">⏱ 2 minutes</span>
+                    <span class="time-badge">2 MINUTES</span>
                     <h3>Tell us about your business</h3>
                     <p>Describe what you do in plain English. No forms to fill out, no categories to select. Just tell us who you are and what you care about.</p>
                     <div class="step-detail">
@@ -132,12 +146,12 @@
             <div class="step">
                 <div class="step-number">02</div>
                 <div class="step-content">
-                    <span class="time-badge">⏱ Instant</span>
+                    <span class="time-badge">INSTANT</span>
                     <h3>AI identifies relevant legislation</h3>
                     <p>Our AI analyzes thousands of bills and surfaces only the ones that affect you. It understands your industry, your concerns, and your priorities.</p>
                     <div class="step-detail">
                         <h4>What you get</h4>
-                        <p>A curated watchlist of bills that matter, ranked by relevance and urgency. No noise — just what you need to know.</p>
+                        <p>A curated watchlist of bills that matter, ranked by relevance and urgency. No noise &mdash; just what you need to know.</p>
                     </div>
                 </div>
             </div>
@@ -145,9 +159,9 @@
             <div class="step">
                 <div class="step-number">03</div>
                 <div class="step-content">
-                    <span class="time-badge">⏱ Ongoing</span>
+                    <span class="time-badge">ONGOING</span>
                     <h3>Stay informed automatically</h3>
-                    <p>Get alerts when bills change status, when deadlines approach, or when action is needed. Email, SMS, or push notifications — your choice.</p>
+                    <p>Get alerts when bills change status, when deadlines approach, or when action is needed. Email, SMS, or push notifications &mdash; your choice.</p>
                     <div class="step-detail">
                         <h4>Never miss a beat</h4>
                         <p>AI monitors 24/7 so you don't have to. Wake up to a daily digest or get real-time alerts.</p>
@@ -158,7 +172,7 @@
             <div class="step">
                 <div class="step-number">04</div>
                 <div class="step-content">
-                    <span class="time-badge">⏱ 30 seconds</span>
+                    <span class="time-badge">30 SECONDS</span>
                     <h3>Generate reports and analysis</h3>
                     <p>Ask questions in plain English: "What changed this week?" or "Which bills threaten my industry?" Get professional reports instantly.</p>
                     <div class="step-detail">
@@ -171,34 +185,39 @@
             <div class="step">
                 <div class="step-number">05</div>
                 <div class="step-content">
-                    <span class="time-badge">⏱ Minutes, not days</span>
+                    <span class="time-badge">MINUTES, NOT DAYS</span>
                     <h3>Take action with AI-powered tools</h3>
                     <p>Generate professional letters, testimony, and talking points. Show up to hearings prepared. Make your voice heard on the issues that matter.</p>
                     <div class="step-detail">
                         <h4>Your voice, amplified</h4>
-                        <p>AI drafts, you review and customize. Your concerns, your tone — just faster and more professional than ever before.</p>
+                        <p>AI drafts, you review and customize. Your concerns, your tone &mdash; just faster and more professional than ever before.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- CTA Section -->
     <section class="cta-section" id="cta">
-        <h2>Ready to get started?</h2>
+        <h2>READY TO GET STARTED?</h2>
         <p>Join the waitlist and be among the first to experience the future of legislative intelligence.</p>
         <form class="email-form" action="https://formspree.io/f/mdalewlb" method="POST">
             <input type="email" name="email" placeholder="Enter your email" required>
             <input type="hidden" name="_subject" value="New Legisly Waitlist Signup!">
             <input type="hidden" name="_next" value="https://legisly.ai/thank-you.html">
-            <button type="submit" class="btn-primary">Join Waitlist</button>
+            <button type="submit">JOIN WAITLIST</button>
         </form>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
-                <a href="index.html" class="logo">leg<span class="dot">i</span>sly<span class="dot">.</span></a>
-                <p>AI-powered legislative tools that let any business compete — and win.</p>
+                <a href="index.html" class="logo-lockup">
+                    <svg class="logo-seal" viewBox="0 0 200 200" width="44" height="44" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="100" cy="100" r="96" stroke="#F2C744" stroke-width="4"/><circle cx="100" cy="100" r="88" stroke="#F2C744" stroke-width="1" stroke-dasharray="2 4"/><circle cx="100" cy="100" r="82" stroke="#F2C744" stroke-width="2"/><g transform="translate(40,30)"><path d="M60 20C30 20 18 50 18 63L102 63C102 50 90 20 60 20Z" stroke="#F2C744" stroke-width="2.5"/><rect x="52" y="9" width="16" height="15" stroke="#F2C744" stroke-width="2"/><circle cx="60" cy="9" r="3" fill="#F2C744"/><circle cx="42" cy="45" r="4" fill="#F2C744"/><circle cx="60" cy="41" r="4" fill="#F2C744"/><circle cx="78" cy="45" r="4" fill="#F2C744"/><rect x="24" y="63" width="7" height="24" fill="#F2C744"/><rect x="40" y="63" width="7" height="24" fill="#F2C744"/><rect x="56" y="63" width="8" height="24" fill="#F2C744"/><rect x="73" y="63" width="7" height="24" fill="#F2C744"/><rect x="89" y="63" width="7" height="24" fill="#F2C744"/><rect x="16" y="87" width="88" height="6" fill="#F2C744"/></g><g fill="#F2C744"><polygon points="28,100 30,105 35,105 31,108 32.5,113 28,110 23.5,113 25,108 21,105 26,105"/><polygon points="172,100 174,105 179,105 175,108 176.5,113 172,110 167.5,113 169,108 165,105 170,105"/></g><text x="100" y="158" text-anchor="middle" fill="#F2C744" font-family="Righteous,cursive" font-size="11" letter-spacing="2">&#x2605; EST 2025 &#x2605;</text></svg>
+                    <span class="logo-text">legisly</span>
+                </a>
+                <p>AI-powered legislative tools that let any business compete &mdash; and win. The playing field, leveled.</p>
             </div>
             <div class="footer-column">
                 <h4>Product</h4>
@@ -228,11 +247,51 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2025 Legisly Labs, Inc. All rights reserved.</p>
+            <p>&copy; 2025 Legisly Labs, Inc. All rights reserved.</p>
             <div class="social-links">
                 <a href="https://x.com/LegislyAI" target="_blank" rel="noopener noreferrer">X</a>
             </div>
         </div>
     </footer>
+
+    <!-- Email Modal -->
+    <div class="modal-overlay" id="emailModal">
+        <div class="modal">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h2>GET EARLY ACCESS</h2>
+            <p>Join the waitlist and be the first to shape policy with AI.</p>
+            <form class="modal-form" action="https://formspree.io/f/mdalewlb" method="POST">
+                <input type="email" name="email" placeholder="you@company.com" required>
+                <input type="hidden" name="_subject" value="New Legisly Waitlist Signup!">
+                <button type="submit">JOIN THE WAITLIST</button>
+                <span class="waitlist-note">500+ businesses already on the list</span>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Modal
+        function openModal() {
+            document.getElementById('emailModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => document.querySelector('.modal-form input[type="email"]').focus(), 300);
+        }
+        function closeModal() {
+            document.getElementById('emailModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        document.getElementById('modalClose').addEventListener('click', closeModal);
+        document.getElementById('emailModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Hamburger menu
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('open');
+        });
+    </script>
 </body>
 </html>
