@@ -166,58 +166,7 @@
       );
       opacity: 0.3;
     }
-    /* Capitol Dome Container */
-    .capitol-container {
-      position: absolute;
-      right: 5%;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 420px;
-      height: 500px;
-      z-index: 5;
-    }
-    .capitol-container svg {
-      width: 100%;
-      height: 100%;
-      filter: drop-shadow(0 15px 30px rgba(0,0,0,0.25));
-    }
-    /* Vintage badge */
-    .vintage-badge {
-      position: absolute;
-      top: 12rem;
-      right: calc(5% + 380px);
-      width: 160px;
-      height: 160px;
-      background: var(--red-accent);
-      border-radius: 50%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      border: 6px solid var(--yellow-vintage);
-      box-shadow: 8px 8px 0 var(--brown-shadow);
-      transform: rotate(12deg);
-      z-index: 20;
-    }
-    .vintage-badge span:first-child {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 0.9rem;
-      color: var(--cream);
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-    .vintage-badge span:nth-child(2) {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2.8rem;
-      color: var(--yellow-vintage);
-      line-height: 1;
-    }
-    .vintage-badge span:last-child {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 0.85rem;
-      color: var(--cream);
-      letter-spacing: 2px;
-    }
+    /* Hero visual placeholder */
     .hero-content {
       position: relative;
       z-index: 10;
@@ -1134,13 +1083,6 @@
     }
     /* Responsive */
     @media (max-width: 1200px) {
-      .capitol-container {
-        width: 300px;
-        right: 2%;
-      }
-      .vintage-badge {
-        right: calc(2% + 230px);
-      }
       .feature-showcase,
       .feature-showcase.reverse {
         gap: 2.5rem;
@@ -1163,8 +1105,6 @@
       }
       .nav-links.open { display: flex; }
       .hero { padding: 7rem 2rem 4rem; }
-      .vintage-badge { display: none; }
-      .capitol-container { display: none; }
       .features { padding: 4rem 2rem; }
       .feature-showcase,
       .feature-showcase.reverse {
@@ -1210,94 +1150,6 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <!-- Capitol Dome -->
-    <div class="capitol-container">
-      <svg viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Base / Steps -->
-        <rect x="20" y="465" width="360" height="18" rx="2" fill="#E8DCC8" stroke="#2D1810" stroke-width="2.5"/>
-        <rect x="35" y="448" width="330" height="20" rx="2" fill="#FAF3E3" stroke="#2D1810" stroke-width="2"/>
-        <rect x="50" y="432" width="300" height="18" rx="1" fill="#E8DCC8" stroke="#2D1810" stroke-width="2"/>
-
-        <!-- Main building body -->
-        <rect x="60" y="320" width="280" height="115" fill="#FAF3E3" stroke="#2D1810" stroke-width="2.5"/>
-        <!-- Horizontal bands on building -->
-        <line x1="60" y1="350" x2="340" y2="350" stroke="#D4C9B0" stroke-width="1"/>
-        <line x1="60" y1="395" x2="340" y2="395" stroke="#D4C9B0" stroke-width="1"/>
-
-        <!-- Columns -->
-        <rect x="80" y="310" width="22" height="125" rx="2" fill="#FAF3E3" stroke="#2D1810" stroke-width="2"/>
-        <rect x="120" y="310" width="22" height="125" rx="2" fill="#FAF3E3" stroke="#2D1810" stroke-width="2"/>
-        <rect x="160" y="310" width="22" height="125" rx="2" fill="#FAF3E3" stroke="#2D1810" stroke-width="2"/>
-        <rect x="218" y="310" width="22" height="125" rx="2" fill="#FAF3E3" stroke="#2D1810" stroke-width="2"/>
-        <rect x="258" y="310" width="22" height="125" rx="2" fill="#FAF3E3" stroke="#2D1810" stroke-width="2"/>
-        <rect x="298" y="310" width="22" height="125" rx="2" fill="#FAF3E3" stroke="#2D1810" stroke-width="2"/>
-
-        <!-- Column capitals (gold tops) -->
-        <rect x="76" y="305" width="30" height="10" rx="2" fill="#F2C744" stroke="#2D1810" stroke-width="1.5"/>
-        <rect x="116" y="305" width="30" height="10" rx="2" fill="#F2C744" stroke="#2D1810" stroke-width="1.5"/>
-        <rect x="156" y="305" width="30" height="10" rx="2" fill="#F2C744" stroke="#2D1810" stroke-width="1.5"/>
-        <rect x="214" y="305" width="30" height="10" rx="2" fill="#F2C744" stroke="#2D1810" stroke-width="1.5"/>
-        <rect x="254" y="305" width="30" height="10" rx="2" fill="#F2C744" stroke="#2D1810" stroke-width="1.5"/>
-        <rect x="294" y="305" width="30" height="10" rx="2" fill="#F2C744" stroke="#2D1810" stroke-width="1.5"/>
-
-        <!-- Pediment / Triangle -->
-        <polygon points="200,240 50,310 350,310" fill="#FAF3E3" stroke="#2D1810" stroke-width="2.5"/>
-        <polygon points="200,255 80,305 320,305" fill="#E8DCC8" stroke="none"/>
-        <!-- Inner pediment detail -->
-        <polygon points="200,260 110,300 290,300" fill="none" stroke="#2D1810" stroke-width="1" stroke-dasharray="4,3"/>
-
-        <!-- Drum (base of dome) -->
-        <rect x="130" y="220" width="140" height="25" rx="2" fill="#FAF3E3" stroke="#2D1810" stroke-width="2"/>
-        <line x1="155" y1="220" x2="155" y2="245" stroke="#2D1810" stroke-width="1.5"/>
-        <line x1="180" y1="220" x2="180" y2="245" stroke="#2D1810" stroke-width="1.5"/>
-        <line x1="200" y1="220" x2="200" y2="245" stroke="#2D1810" stroke-width="1.5"/>
-        <line x1="220" y1="220" x2="220" y2="245" stroke="#2D1810" stroke-width="1.5"/>
-        <line x1="245" y1="220" x2="245" y2="245" stroke="#2D1810" stroke-width="1.5"/>
-
-        <!-- Dome -->
-        <path d="M125 222 Q125 140 200 105 Q275 140 275 222" fill="#FAF3E3" stroke="#2D1810" stroke-width="2.5"/>
-        <!-- Dome ribs -->
-        <path d="M150 218 Q155 155 200 120" stroke="#2D1810" stroke-width="1" fill="none"/>
-        <path d="M175 220 Q178 150 200 115" stroke="#2D1810" stroke-width="1" fill="none"/>
-        <line x1="200" y1="222" x2="200" y2="108" stroke="#2D1810" stroke-width="1"/>
-        <path d="M225 220 Q222 150 200 115" stroke="#2D1810" stroke-width="1" fill="none"/>
-        <path d="M250 218 Q245 155 200 120" stroke="#2D1810" stroke-width="1" fill="none"/>
-
-        <!-- Dome windows -->
-        <rect x="145" y="180" width="12" height="22" rx="6" fill="#1B365D" stroke="#2D1810" stroke-width="1"/>
-        <rect x="170" y="165" width="12" height="26" rx="6" fill="#1B365D" stroke="#2D1810" stroke-width="1"/>
-        <rect x="194" y="158" width="12" height="28" rx="6" fill="#1B365D" stroke="#2D1810" stroke-width="1"/>
-        <rect x="218" y="165" width="12" height="26" rx="6" fill="#1B365D" stroke="#2D1810" stroke-width="1"/>
-        <rect x="243" y="180" width="12" height="22" rx="6" fill="#1B365D" stroke="#2D1810" stroke-width="1"/>
-
-        <!-- Lantern -->
-        <rect x="185" y="82" width="30" height="26" rx="2" fill="#FAF3E3" stroke="#2D1810" stroke-width="2"/>
-        <ellipse cx="200" cy="83" rx="20" ry="6" fill="#F2C744" stroke="#2D1810" stroke-width="1.5"/>
-        <!-- Lantern dome -->
-        <path d="M182 82 Q182 62 200 52 Q218 62 218 82" fill="#FAF3E3" stroke="#2D1810" stroke-width="2"/>
-
-        <!-- Finial / Spire -->
-        <line x1="200" y1="52" x2="200" y2="32" stroke="#2D1810" stroke-width="2.5"/>
-        <circle cx="200" cy="28" r="6" fill="#F2C744" stroke="#2D1810" stroke-width="2"/>
-        <line x1="200" y1="22" x2="200" y2="8" stroke="#2D1810" stroke-width="2"/>
-
-        <!-- Central entrance -->
-        <rect x="182" y="380" width="36" height="55" rx="18" fill="#1B365D" stroke="#2D1810" stroke-width="2"/>
-
-        <!-- Wing windows -->
-        <rect x="85" y="355" width="16" height="24" rx="2" fill="#1B365D" stroke="#2D1810" stroke-width="1"/>
-        <rect x="125" y="355" width="16" height="24" rx="2" fill="#1B365D" stroke="#2D1810" stroke-width="1"/>
-        <rect x="259" y="355" width="16" height="24" rx="2" fill="#1B365D" stroke="#2D1810" stroke-width="1"/>
-        <rect x="299" y="355" width="16" height="24" rx="2" fill="#1B365D" stroke="#2D1810" stroke-width="1"/>
-      </svg>
-    </div>
-
-    <div class="vintage-badge">
-      <span>California</span>
-      <span>+</span>
-      <span>Federal</span>
-    </div>
-
     <div class="hero-content">
       <div class="hero-eyebrow">&starf; Purpose-Built for CA Lobbying Firms &starf;</div>
       <h1>
